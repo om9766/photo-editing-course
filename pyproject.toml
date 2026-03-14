@@ -1,0 +1,27 @@
+[project]
+name = "ai-photo-editing-course"
+version = "0.1.0"
+description = "Automatic generator for AI-assisted photo editing lessons, exercises, and evaluations."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "AI Photo Editing Team" }]
+dependencies = [
+  "typer>=0.12.3",
+  "pillow>=10.3.0",
+  "opencv-python>=4.10.0.84",
+  "numpy>=1.26.4",
+  "scikit-image>=0.23.2",
+  "python-dotenv>=1.0.1",
+  "openai>=1.40.0",
+]
+
+[project.scripts]
+generate-course = "cli.generate_course:app"
+generate-exercise = "cli.generate_exercise:app"
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["course_engine", "tools", "cli"]
